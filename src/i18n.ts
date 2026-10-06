@@ -7,6 +7,7 @@ import Backend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 import ChainedBackend from "i18next-chained-backend";
 import LocalStorageBackend from "i18next-localstorage-backend";
+import { version } from "../package.json";
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore
@@ -28,6 +29,8 @@ i18n
       backendOptions: [
         {
           expirationTime: 7 * 24 * 60 * 60 * 1000, // 7 days
+          // Atualização do Cloudreve invalida o cache (senão textos novos aparecem como chave por até 7 dias)
+          defaultVersion: version,
           loadPath: "/locales/{{lng}}/{{ns}}.json",
         },
       ],
