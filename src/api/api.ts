@@ -103,6 +103,7 @@ import {
 } from "./user.ts";
 import {
   ArchiveWorkflowService,
+  TranslateWorkflowService,
   DownloadWorkflowService,
   ImportWorkflowService,
   ListTaskService,
@@ -827,6 +828,23 @@ export function sendCreateArchive(req: ArchiveWorkflowService): ThunkResponse<Ta
     return await dispatch(
       send(
         "/workflow/archive",
+        {
+          data: req,
+          method: "POST",
+        },
+        {
+          ...defaultOpts,
+        },
+      ),
+    );
+  };
+}
+
+export function sendTranslate(req: TranslateWorkflowService): ThunkResponse<TaskResponse> {
+  return async (dispatch, _getState) => {
+    return await dispatch(
+      send(
+        "/workflow/translate",
         {
           data: req,
           method: "POST",

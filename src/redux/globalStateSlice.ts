@@ -197,6 +197,8 @@ export interface GlobalStateSlice {
 
   // Extract archive dialog
   extractArchiveDialogOpen?: boolean;
+  translateDialogOpen?: boolean;
+  translateDialogFile?: FileResponse;
   extractArchiveDialogFile?: FileResponse;
   extractArchiveDialogMask?: string[];
   extractArchiveDialogEncoding?: string;
@@ -410,6 +412,7 @@ export const globalStateSlice = createSlice({
       state.batchDownloadLogDialogOpen = state.batchDownloadLogDialogOpen ? false : undefined;
       state.createArchiveDialogOpen = state.createArchiveDialogOpen ? false : undefined;
       state.extractArchiveDialogOpen = state.extractArchiveDialogOpen ? false : undefined;
+      state.translateDialogOpen = state.translateDialogOpen ? false : undefined;
 
       // reset all viewers
       state.imageViewer = undefined;
@@ -434,6 +437,10 @@ export const globalStateSlice = createSlice({
       state.extractArchiveDialogFile = action.payload.file;
       state.extractArchiveDialogMask = action.payload.mask;
       state.extractArchiveDialogEncoding = action.payload.encoding;
+    },
+    setTranslateDialog: (state, action: PayloadAction<{ open: boolean; file?: FileResponse }>) => {
+      state.translateDialogOpen = action.payload.open;
+      state.translateDialogFile = action.payload.file;
     },
     closeExtractArchiveDialog: (state) => {
       state.extractArchiveDialogOpen = false;
@@ -854,6 +861,7 @@ export const {
   closeRemoteDownloadDialog,
   setExtractArchiveDialog,
   closeExtractArchiveDialog,
+  setTranslateDialog,
   setCreateArchiveDialog,
   closeCreateArchiveDialog,
   setBatchDownloadLogDialog,

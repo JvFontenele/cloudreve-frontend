@@ -24,6 +24,7 @@ import FileIcon from "../../FileManager/Explorer/FileIcon.tsx";
 import Archive from "../../Icons/Archive.tsx";
 import ArchiveArrow from "../../Icons/ArchiveArrow.tsx";
 import ArrowImport from "../../Icons/ArrowImport.tsx";
+import Translate from "../../Icons/Translate.tsx";
 import StorageOutlined from "../../Icons/StorageOutlined.tsx";
 import TaskDetail from "./TaskDetail.tsx";
 import TaskSummaryStatus from "./TaskSummaryStatus.tsx";
@@ -105,6 +106,7 @@ const taskIconsMap: {
   [TaskType.extract_archive]: ArchiveArrow,
   [TaskType.relocate]: StorageOutlined,
   [TaskType.import]: ArrowImport,
+  [TaskType.translate]: Translate,
 };
 
 const TaskCard = ({ loading, showProgress, onLoad, task }: TaskCardProps) => {

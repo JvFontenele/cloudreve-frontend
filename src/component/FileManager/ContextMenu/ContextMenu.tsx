@@ -12,6 +12,7 @@ import {
   dialogBasedMoveCopy,
   enterFolder,
   extractArchive,
+  translateFile,
   goToParent,
   goToSharedLink,
   newRemoteDownload,
@@ -28,6 +29,7 @@ import ArrowSync from "../../Icons/ArrowSync.tsx";
 import BinFullOutlined from "../../Icons/BinFullOutlined.tsx";
 import Clipboard from "../../Icons/Clipboard.tsx";
 import CloudDownloadOutlined from "../../Icons/CloudDownloadOutlined.tsx";
+import Translate from "../../Icons/Translate.tsx";
 import CopyOutlined from "../../Icons/CopyOutlined.tsx";
 import DeleteOutlined from "../../Icons/DeleteOutlined.tsx";
 import Download from "../../Icons/Download.tsx";
@@ -118,6 +120,7 @@ const ContextMenu = ({ fmIndex = 0 }: ContextMenuProps) => {
     displayOpt.showRemoteDownload ||
     displayOpt.showTorrentRemoteDownload ||
     displayOpt.showExtractArchive ||
+    displayOpt.showTranslate ||
     displayOpt.showUpload;
   let part2 =
     displayOpt.showCreateFolder ||
@@ -216,6 +219,14 @@ const ContextMenu = ({ fmIndex = 0 }: ContextMenuProps) => {
             <ArchiveArrow fontSize="small" />
           </ListItemIcon>
           <ListItemText>{t("application:fileManager.extractArchive")}</ListItemText>
+        </SquareMenuItem>
+      )}
+      {displayOpt.showTranslate && (
+        <SquareMenuItem onClick={() => dispatch(translateFile(fmIndex, targets[0]))}>
+          <ListItemIcon>
+            <Translate fontSize="small" />
+          </ListItemIcon>
+          <ListItemText>{t("application:fileManager.translate")}</ListItemText>
         </SquareMenuItem>
       )}
       {displayOpt.showTorrentRemoteDownload && (

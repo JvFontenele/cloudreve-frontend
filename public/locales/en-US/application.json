@@ -453,7 +453,8 @@
     "noEncryption": "Not encrypted",
     "ftsStatus": "Full-text index",
     "ftsIndexed": "Indexed",
-    "ftsNotIndexed": "Not indexed"
+    "ftsNotIndexed": "Not indexed",
+    "translate": "Translate"
   },
   "modals": {
     "includePasswordInShareLink": "Include password in share link",
@@ -611,7 +612,10 @@
     "viewSetting": "View setting",
     "saved": "Saved",
     "notSet": "Not set",
-    "deleteViewSetting": "Delete view setting"
+    "deleteViewSetting": "Delete view setting",
+    "translateFile": "File to translate",
+    "translateFrom": "From",
+    "translateTo": "To"
   },
   "uploader": {
     "fileCopyName": "Copy of ",
@@ -980,7 +984,16 @@
     "relocateFileTo": "Relocate storage policy to {{policy}} for <0></0>{{more}}",
     "extractFileTo": "Extract <0></0>{{more}} to <1></1>",
     "createArchiveTo": "Create archive file to <1></1> for <0></0>{{more}}",
-    "importFileTo": "Import files from {{policy}} to <0></0>"
+    "importFileTo": "Import files from {{policy}} to <0></0>",
+    "translateFileTo": "Translate <0></0> to {{lang}}",
+    "sendingToTranslator": "Send to Transynex",
+    "sendingToTranslatorDes": "Uploading the file to Transynex and creating the project.",
+    "translating": "Translating",
+    "translatingDes": "Transynex is extracting, recognizing and translating the content.",
+    "exportingTranslation": "Export",
+    "exportingTranslationDes": "Generating the translated file in the original format.",
+    "translateTransferDes": "Saving the translated file next to the original.",
+    "translatedJobs": "Finished jobs"
   },
   "vas": {
     "points": "Points",

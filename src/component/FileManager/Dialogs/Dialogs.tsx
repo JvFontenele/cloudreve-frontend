@@ -27,6 +27,7 @@ import CreateNew from "./CreateNew.tsx";
 import { useAppSelector } from "../../../redux/hooks.ts";
 import CreateArchive from "./CreateArchive.tsx";
 import ExtractArchive from "./ExtractArchive.tsx";
+import TranslateFile from "./TranslateFile.tsx";
 import CreateRemoteDownload from "./CreateRemoteDownload.tsx";
 import AdvanceSearch from "../Search/AdvanceSearch/AdvanceSearch.tsx";
 import React from "react";
@@ -37,6 +38,7 @@ import DirectLinksControl from "./DirectLinksControl.tsx";
 const Dialogs = () => {
   const showCreateArchive = useAppSelector((state) => state.globalState.createArchiveDialogOpen);
   const showExtractArchive = useAppSelector((state) => state.globalState.extractArchiveDialogOpen);
+  const showTranslate = useAppSelector((state) => state.globalState.translateDialogOpen);
   const showRemoteDownload = useAppSelector((state) => state.globalState.remoteDownloadDialogOpen);
   const showAdvancedSearch = useAppSelector((state) => state.globalState.advanceSearchOpen);
   const showListViewColumnSetting = useAppSelector((state) => state.globalState.listViewColumnSettingDialogOpen);
@@ -73,6 +75,7 @@ const Dialogs = () => {
       <EpubViewer />
       {showCreateArchive != undefined && <CreateArchive />}
       {showExtractArchive != undefined && <ExtractArchive />}
+      {showTranslate != undefined && <TranslateFile />}
       {showRemoteDownload != undefined && <CreateRemoteDownload />}
       {showAdvancedSearch != undefined && <AdvanceSearch />}
       {showListViewColumnSetting != undefined && <ColumnSetting />}

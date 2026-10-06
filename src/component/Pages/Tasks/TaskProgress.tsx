@@ -79,6 +79,34 @@ const stepOptions: {
       completedStep,
     ],
   ],
+  [TaskType.translate]: [
+    // Master
+    [
+      queueingStep,
+      {
+        title: "setting.sendingToTranslator",
+        state: "",
+        description: "setting.sendingToTranslatorDes",
+      },
+      {
+        title: "setting.translating",
+        state: "translate",
+        description: "setting.translatingDes",
+        supportProgress: true,
+      },
+      {
+        title: "setting.exportingTranslation",
+        state: "export",
+        description: "setting.exportingTranslationDes",
+      },
+      {
+        title: "setting.transferring",
+        state: "transfer",
+        description: "setting.translateTransferDes",
+      },
+      completedStep,
+    ],
+  ],
   [TaskType.import]: [
     // Master
     [

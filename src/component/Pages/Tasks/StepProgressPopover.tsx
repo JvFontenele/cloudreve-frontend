@@ -25,6 +25,7 @@ export const ProgressKeys = {
   imported: "imported",
   indexed: "indexed",
   rebuild_index: "rebuild_index",
+  translated: "translated",
 };
 
 const ProgressBar = ({ pkey, p }: { pkey: string; p: TaskProgress }) => {
@@ -152,6 +153,16 @@ const ProgressBar = ({ pkey, p }: { pkey: string; p: TaskProgress }) => {
         indeterminate={p.total == 0}
         title={t("setting.transferredFiles")}
         secondary={secondary}
+        progress={(100 * p.current) / Math.max(p.total, 1)}
+      />
+    );
+  }
+
+  if (pkey == ProgressKeys.translated) {
+    return (
+      <StepProgressBar
+        title={t("setting.translatedJobs")}
+        secondary={`${p.current} / ${p.total}`}
         progress={(100 * p.current) / Math.max(p.total, 1)}
       />
     );

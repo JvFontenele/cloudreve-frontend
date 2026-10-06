@@ -12,6 +12,8 @@ import CrUri, { Filesystem } from "../../../util/uri.ts";
 import { FileManagerIndex } from "../FileManager.tsx";
 
 const supportedArchiveTypes = ["zip", "gz", "xz", "tar", "rar", "7z", "bz2"];
+// Formatos aceitos pelo Transynex
+const translatableTypes = ["png", "jpg", "jpeg", "webp", "tif", "tiff", "pdf", "cbz", "zip", "epub"];
 
 export const canManageVersion = (file: FileResponse, bs: Boolset) => {
   return (
@@ -54,6 +56,7 @@ export interface DisplayOption {
   showDownload?: boolean;
   showGoToSharedLink?: boolean;
   showExtractArchive?: boolean;
+  showTranslate?: boolean;
   showTorrentRemoteDownload?: boolean;
   showGoToParent?: boolean;
 
@@ -259,6 +262,12 @@ export const getActionOpt = (
     !!currentUser &&
     groupBs.enabled(GroupPermission.archive_task) &&
     supportedArchiveTypes.includes(firstFileSuffix ?? "");
+  display.showTranslate =
+    targets.length == 1 &&
+    display.hasFile &&
+    display.showDownload &&
+    !!currentUser &&
+    translatableTypes.includes(firstFileSuffix ?? "");
   display.showTorrentRemoteDownload =
     targets.length == 1 &&
     display.hasFile &&

@@ -108,6 +108,22 @@ const TaskSummaryTitle = ({ type, summary, isInDashboard = false }: TaskSummaryT
           ]}
         />
       );
+    case TaskType.translate:
+      return (
+        <Trans
+          i18nKey="setting.translateFileTo"
+          values={{ lang: summary?.props.target_language ?? "" }}
+          components={[
+            <StyledFileBadge
+              variant={"outlined"}
+              simplifiedFile={{
+                type: FileType.file,
+                path: summary?.props.src ? summary?.props.src : newMyUri("").toString(),
+              }}
+            />,
+          ]}
+        />
+      );
     case TaskType.full_text_rebuild:
       return (
         <Typography variant={"inherit"}>

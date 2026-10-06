@@ -8,6 +8,12 @@ export interface ArchiveWorkflowService {
   file_mask?: string[];
 }
 
+export interface TranslateWorkflowService {
+  src: string;
+  source_language: string;
+  target_language: string;
+}
+
 export interface TaskListResponse {
   tasks: TaskResponse[];
   pagination: PaginationResults;
@@ -39,6 +45,7 @@ export interface TaskSummary {
     failed?: number;
     total?: number;
     download?: DownloadTaskStatus;
+    target_language?: string;
   };
 }
 
@@ -133,6 +140,7 @@ export enum TaskType {
   explicit_entity_recycle = "explicit_entity_recycle",
   upload_sentinel_check = "upload_sentinel_check",
   import = "import",
+  translate = "translate",
   full_text_index = "full_text_index",
   full_text_copy = "full_text_copy",
   full_text_change_owner = "full_text_change_owner",

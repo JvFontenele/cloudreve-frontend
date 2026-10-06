@@ -453,7 +453,8 @@
     "noEncryption": "未加密",
     "ftsStatus": "全文索引",
     "ftsIndexed": "已索引",
-    "ftsNotIndexed": "未索引"
+    "ftsNotIndexed": "未索引",
+    "translate": "翻译"
   },
   "modals": {
     "includePasswordInShareLink": "在链接中包含密码",
@@ -611,7 +612,10 @@
     "viewSetting": "视图设置",
     "saved": "已保存",
     "notSet": "未设置",
-    "deleteViewSetting": "删除视图设置"
+    "deleteViewSetting": "删除视图设置",
+    "translateFile": "待翻译文件",
+    "translateFrom": "源语言",
+    "translateTo": "目标语言"
   },
   "uploader": {
     "fileCopyName": "副本_",
@@ -980,7 +984,16 @@
     "relocateFileTo": "将 <0></0>{{more}} 的存储策略转移至 {{policy}}",
     "extractFileTo": "将 <0></0>{{more}} 解压缩至 <1></1>",
     "createArchiveTo": "将 <0></0>{{more}} 打包至 <1></1>",
-    "importFileTo": "将 {{policy}} 中的文件导入至 <0></0>"
+    "importFileTo": "将 {{policy}} 中的文件导入至 <0></0>",
+    "translateFileTo": "将 <0></0> 翻译为 {{lang}}",
+    "sendingToTranslator": "发送至 Transynex",
+    "sendingToTranslatorDes": "正在上传文件至 Transynex 并创建项目。",
+    "translating": "翻译中",
+    "translatingDes": "Transynex 正在提取、识别并翻译内容。",
+    "exportingTranslation": "导出",
+    "exportingTranslationDes": "正在以原格式生成译文文件。",
+    "translateTransferDes": "正在将译文保存到原文件旁。",
+    "translatedJobs": "已完成任务"
   },
   "vas": {
     "points": "积分",

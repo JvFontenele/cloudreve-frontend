@@ -68,6 +68,7 @@ import {
   CreateNewDialogType,
   setDirectLinkDialog,
   setExtractArchiveDialog,
+  setTranslateDialog,
   setRemoteDownloadDialog,
   setShareLinkDialog,
   setSidebar,
@@ -1215,6 +1216,13 @@ export function extractArchive(index: number, file: FileResponse): AppThunk {
   return async (dispatch, _getState) => {
     dispatch(closeContextMenu({ index, value: undefined }));
     dispatch(setExtractArchiveDialog({ open: true, file }));
+  };
+}
+
+export function translateFile(index: number, file: FileResponse): AppThunk {
+  return async (dispatch, _getState) => {
+    dispatch(closeContextMenu({ index, value: undefined }));
+    dispatch(setTranslateDialog({ open: true, file }));
   };
 }
 
